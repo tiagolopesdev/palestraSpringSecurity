@@ -5,6 +5,7 @@
 package com.palestraSpringSecurity.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -17,8 +18,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest()
-                .authenticated().and().formLogin().loginPage("/entrar").permitAll();
+        http.authorizeRequests()
+                .antMatchers("/projetos").hasAnyRole("PG_PROJETOS")
+                .antMatchers("/relatorio-equipe").hasAnyRole("PG_REL_EQUIPE")
+                .antMatchers("/relatorio-custos").hasAnyRole("PG_REL_CUSTOS")
+                .anyRequest()
+                .authenticated()
+            .and().formLogin()
+                .loginPage("/entrar").permitAll();
     }
 
 }
