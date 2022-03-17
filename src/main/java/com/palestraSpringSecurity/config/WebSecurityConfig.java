@@ -24,8 +24,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/relatorio-custos").hasAnyRole("PG_REL_CUSTOS")
                 .anyRequest()
                 .authenticated()
-            .and().formLogin()
-                .loginPage("/entrar").permitAll();
+                .and().formLogin()
+                .loginPage("/entrar").permitAll()
+                .and().logout().logoutSuccessUrl("/entrar?logout").permitAll();
     }
 
 }
