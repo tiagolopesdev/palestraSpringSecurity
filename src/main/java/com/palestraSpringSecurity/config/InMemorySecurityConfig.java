@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
  *
  * @author tiagolopes
  */
-@Configuration
+//@Configuration
 public class InMemorySecurityConfig {
 
     @Autowired
