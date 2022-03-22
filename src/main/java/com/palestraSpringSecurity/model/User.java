@@ -26,18 +26,16 @@ public class User {
     private String password;
     private boolean active;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "userRoles", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "role_id")
-    private List<String> roles = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "users_roles",
+            joinColumns
+            = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns
+            = @JoinColumn(name = "roles_id", referencedColumnName = "id")
+    )
+    private List<Roles> role = new ArrayList<>();
 
-    public User(String username, String password, boolean active) {
-        this.username = username;
-        this.password = password;
-        this.active = active;
-    }
-    
     public User() {
     }
-
+ 
 }
