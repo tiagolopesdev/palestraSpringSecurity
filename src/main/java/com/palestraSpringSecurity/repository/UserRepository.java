@@ -5,23 +5,19 @@
 package com.palestraSpringSecurity.repository;
 
 import com.palestraSpringSecurity.model.User;
-import java.util.List;
-import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author tiagolopes
  */
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
 
-public interface UserRepository extends JpaRepository<User, Integer>{
-    
-//    Optional<User> findByUsername(String username);
     User findByUsername(String username);
-        
-//    @Query("SELECT e FROM User e JOIN FETCH e.roles WHERE e.username= (:username)")
-//    List<User> findByUsernameAndRoles(@Param ("username") String username);
+
+//    @Query("SELECT u FROM User u JOIN FETCH u.role r WHERE r.id = :id")
+//    public List<User> findByUsernameAndRoles(Integer idUser);
 //     
 }
