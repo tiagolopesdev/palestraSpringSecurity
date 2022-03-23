@@ -20,11 +20,6 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 public class UserDetail implements UserDetails {
 
-//    private String username;
-//    private String password;
-//    private boolean active;
-//    private List<GrantedAuthority> authorities;
-    
     private User user;
 
     public UserDetail(User user) {
@@ -34,11 +29,9 @@ public class UserDetail implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        
-        this.user.getRoles().forEach(p -> {
-            authorities.add(new SimpleGrantedAuthority("ROLE_"+p));
-//            GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_"+p);
-//            authorities.add(authority);
+        this.user.getRole().forEach(p -> {
+            GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + p);
+            authorities.add(authority);
         });
         return authorities;
     }
