@@ -5,9 +5,11 @@
 package com.palestraSpringSecurity.security;
 
 import com.palestraSpringSecurity.model.User;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,7 +29,7 @@ public class UserDetail implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        this.user.getRole().forEach(p -> {
+        user.getRole().forEach(p -> {
             GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + p);
             System.out.println("Usuário: "+user.getUsername()+" com as roles "+user.toString());
             System.out.println("Authority: "+authority.toString());
