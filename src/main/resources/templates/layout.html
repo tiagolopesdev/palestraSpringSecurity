@@ -27,9 +27,9 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li sec:authorize="hasRole('PG_PROJETOS')"><a href="/projetos">Projetos</a></li>
-                        <li sec:authorize="hasRole('PG_REL_CUSTOS')"><a href="/relatorio-custos">Relatório Custos</a></li>
-                        <li sec:authorize="hasRole('PG_REL_EQUIPE')"><a href="/relatorio-equipe">Relatório Equipe</a></li>
+                        <li sec:authorize="hasRole('ROLE_PG_PROJETOS')"><a href="/projetos">Projetos</a></li>
+                        <li sec:authorize="hasRole('ROLE_PG_REL_CUSTOS')"><a href="/relatorio-custos">Relatório Custos</a></li>
+                        <li sec:authorize="hasRole('ROLE_PG_REL_EQUIPE')"><a href="/relatorio-equipe">Relatório Equipe</a></li>
                     </ul>     
                 </div>
             </div>
