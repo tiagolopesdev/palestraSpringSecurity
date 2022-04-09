@@ -23,7 +23,7 @@
 ### Login com HTTP Basic
 - Nesse ponto, login com HTTP Basic, ao adicionar a dependência do Spring Security a cada inicialização é gerado uma senha e um username user definido por padrão pelo Spring Security.
 ### Login com página HTML gerada pelo Spring Security
-    ```java
+   ```java
     @Configuration
     public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
@@ -34,7 +34,7 @@
         }
     
     }
-    ```
+   ```
  - Dentro da classe do `WebSecurityConfig` o método `anyRequest()` dentro do metodo `configure()` faz com que todas as requisições, feitas a aplicação, o usuário esteja autenticado. E solicitamos ao Spring Security que essa autenticação seja feita através do `formLogin()`.
 ### Login com página customizada
   ```java
@@ -53,7 +53,7 @@
 - Após criar um template HTML de login e defini-lo com a requisição `/entrar` dentro do controller, na classe `WebSecurityConfig` o método `.loginPage()` diz ao spring o template HTML responsável por fazer o login.
 
 ### Proteger páginas do sistema e configurar permissão para usuários
-    ```java
+   ```java
       @Configuration
       public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -70,7 +70,7 @@
           }
 
       }
-      ```
+   ```
   - Através do método `.antMatchers()`, conseguimos passar as URI que o controller em questão possui e atribuimos a ela quais Roles podem acessar através do método `hasAnyRole()`. Nesse ponto conseguimos proteger nossas páginas.
     ```java
     @Configuration
@@ -125,7 +125,7 @@
 ### Buscando usuário da base de dados
    - A busca do usuário na base de dados é feita através do `UserDetailsService` que devolve os dados do usuário, recuperados pelo `UserRepository`, para o `UserDetail`, como no código a seguir:
     
-    ```java
+  ```java
     @Service
     public class UserDetailService implements UserDetailsService {
     
@@ -139,7 +139,7 @@
             return detail;
         }
     }
-    ```
+  ```
 ### Implementação do UserDetails
   - Ao implementar a interface `UserDetails` ela trás consigo métodos com parâmetros vindos da classe `userDetailsService`, que recupera os dados do usuário.
 
