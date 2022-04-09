@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/58925056/157106965-b9748e57-ede6-44de-8971-5e1ba867981b.svg" width=600>
+</p>
+
 # Palestra Spring Security
 
 ## Vantagens
@@ -22,9 +26,9 @@
 12. [Autor](#autor)
 
 
-### Login com HTTP Basic
+### 📌Login com HTTP Basic
 - Nesse ponto, login com HTTP Basic, ao adicionar a dependência do Spring Security a cada inicialização é gerado uma senha e um username user definido por padrão pelo Spring Security.
-### Login com página HTML gerada pelo Spring Security
+### 📌Login com página HTML gerada pelo Spring Security
    ```java
     @Configuration
     public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -38,7 +42,7 @@
     }
    ```
  - Dentro da classe do `WebSecurityConfig` o método `anyRequest()` dentro do metodo `configure()` faz com que todas as requisições, feitas a aplicação, o usuário esteja autenticado. E solicitamos ao Spring Security que essa autenticação seja feita através do `formLogin()`.
-### Login com página customizada
+### 📌Login com página customizada
   ```java
       @Configuration
       public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -54,7 +58,7 @@
    ```    
 - Após criar um template HTML de login e defini-lo com a requisição `/entrar` dentro do controller, na classe `WebSecurityConfig` o método `.loginPage()` diz ao spring o template HTML responsável por fazer o login.
 
-### Proteger páginas do sistema e configurar permissão para usuários
+### 📌Proteger páginas do sistema e configurar permissão para usuários
    ```java
       @Configuration
       public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -95,7 +99,7 @@
     **OBS**: o método `.passwordEncoder(NoOpPasswordEncoder.getInstance())` precisa ser definido na aplicação, se não apresentará erro. 
     
     [Referência de solução com erro de password](https://www.yawintutor.com/illegalargumentexception-there-is-no-passwordencoder-mapped-for-the-id-null/#:~:text=The%20exception%20%E2%80%9C%20java.lang.IllegalArgumentException%3A%20There%20is%20no%20PasswordEncoder,the%20password%20to%20be%20used%20as%20plain%20text.)
-### Desabilitar itens sem permissão para o usuário
+### 📌Desabilitar itens sem permissão para o usuário
   - Após configurar as roles dos usuários, desabilitamos as páginas a qual ele não possui acesso, através do atributo `sec:authorize="hasRole('PG_PROJETOS')”`. Para isso, precisamos da depencia  `thymeleaf-extras-springsecurity5`.
     
     ```html
@@ -107,7 +111,7 @@
       </ul>     
     </div>
     ```
-### Incluir o botão de sair
+### 📌Incluir o botão de sair
   - Implementamos um form com a action `/logout` e method `post` que é recebido pela classe `WebSecurityConfig`. Nessa classe usamos o metodo `logout()` para desconectar o usuário, como também damos acesso a ele através do `logoutSuccessUrl()`. Ficando da seguinte forma:
     
     ```java
@@ -124,7 +128,7 @@
                     .and().logout().logoutSuccessUrl("/entrar?logout").permitAll();
         }
     ```
-### Buscando usuário da base de dados
+### 📌Buscando usuário da base de dados
    - A busca do usuário na base de dados é feita através do `UserDetailsService` que devolve os dados do usuário, recuperados pelo `UserRepository`, para o `UserDetail`, como no código a seguir:
     
   ```java
@@ -142,10 +146,10 @@
         }
     }
   ```
-### Implementação do UserDetails
+### 📌Implementação do UserDetails
   - Ao implementar a interface `UserDetails` ela trás consigo métodos com parâmetros vindos da classe `userDetailsService`, que recupera os dados do usuário.
 
-### Exibindo o nome do usuário na página html
+### 📌Exibindo o nome do usuário na página html
   - Usando a integração do Thymeleaf com o Spring Security, o trecho de código,`principal.username` devolve o atributo `username` da  implementação de `UserDetails` , que neste caso retorna o nome do usuário.
     
     ```html
@@ -153,7 +157,7 @@
     	<h1><span sec:authentication="principal.username"></span>, Bem vindo(a) ao sistema!</h1>
     </div>
     ```
-### Configurando o "remember-me"
+### 📌Configurando o "remember-me"
   - Para que o Spring Security recarregue os dados do usuário através da função `rememberMe()`, é feito o uso da classe `userDetailsService` que faz a busca no banco de dados por meio da interface `userRepository`. Implementação desse método a seguir:
     
     ```java
@@ -177,14 +181,14 @@
     ```
     
 
-## Referências
+## 📌Referências
 
 [Spring Security: Database-backend UserDetailsService](https://www.baeldung.com/spring-security-authentication-with-a-database)
 
 [JDBC Authentication](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html)
 
 
-# Autor
+# 📌Autor
   <img src="https://user-images.githubusercontent.com/58925056/157934762-1b63b01a-92c4-4a5a-8cf3-1787c894c565.png" width=175px>
 
 ### 📲Meus contatos
