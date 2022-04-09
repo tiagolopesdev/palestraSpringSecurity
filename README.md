@@ -12,12 +12,14 @@
 2. [Login com página HTML gerada pelo Spring Security](#login-com-página-html-gerada-pelo-spring-security)
 3. [Login com página customizada](#login-com-página-customizada)
 4. [Proteger páginas do sistema e configurar permissão para usuários](#proteger-páginas-do-sistema-e-configurar-permissão-para-usuários)
-5. [Desabilitar itens sem permissão do usuário](#desabilitar-itens-sem-permissão-do-usuário)
+5. [Desabilitar itens sem permissão para o usuário](#desabilitar-itens-sem-permissão-para-o-usuário)
 6. [Incluir o botão de sair](#incluir-o-botão-de-sair)
 7. [Buscando usuário da base de dados](#buscando-usuário-da-base-de-dados)
 8. [Implementação do UserDetails](#implementação-do-userdetails)
-9. [Exibindo o nome do usuário na página html](#exibindo-o-nome-do-usuario-na-pagina-html)
+9. [Exibindo o nome do usuário na página html](#exibindo-o-nome-do-usuário-na-página-html)
 10. [Configurando o "remember-me"](#configurando-o-remember-me)
+11. [Referências](#referências)
+12. [Autor](#autor)
 
 
 ### Login com HTTP Basic
@@ -180,3 +182,14 @@
 [Spring Security: Database-backend UserDetailsService](https://www.baeldung.com/spring-security-authentication-with-a-database)
 
 [JDBC Authentication](https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html)
+
+
+# Autor
+  <img src="https://user-images.githubusercontent.com/58925056/157934762-1b63b01a-92c4-4a5a-8cf3-1787c894c565.png" width=175px>
+
+### 📲Meus contatos
+
+  <a href="https://instagram.com/tiago_lopes_14" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a> 
+  <a href="mailto:saxtiago@gmailcom"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/tiagolopesdeveloper/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href="https://t.me/tiagoLopesDev" target="_blank"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" target="_blank"></a>
